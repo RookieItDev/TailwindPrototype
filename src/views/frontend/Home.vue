@@ -1,5 +1,5 @@
 <template>
-    <div>
-        Welcome To Homepage..
-    </div>
+   <div>
+       Welcome Homepage
+   </div>
 </template>
