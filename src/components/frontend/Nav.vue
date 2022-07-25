@@ -120,11 +120,11 @@
         >
       </div>
       <div
-        class="relative z-30 flex flex-grow col-span-2 items-center justify-end justify-self-end w-full h-10"
+        class="relative z-30 flex flex-grow col-span-2 items-center justify-end justify-self-end w-full h-10 cursor-pointer"
       >
-      <a
+      <router-link  to="/login"><a
           class="flex items-center justify-center ml-5 px-3 h-10 text-gray-800  text-sm font-bold rounded-lg"
-          href="/circles"
+       
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -139,8 +139,8 @@
             <path  
             d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z">
             </path>
-            </svg><span>LOGIN</span></a
-        >
+            </svg><span>SIGN IN</span></a
+        ></router-link>
       </div>
     </div>
   </nav>
@@ -151,9 +151,4 @@ export default {
 };
 </script>
 
-<style lang="css">
-.router-link-active,
-.router-link-exact-active {
-  color: purple;
-}
-</style>
+
