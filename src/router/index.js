@@ -1,20 +1,57 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+
+// Import Layouts
+import FrontendLayout from '@/layouts/Frontend.vue'
+
+// Import Views
+// Frontend
+import Home from '@/views/frontend/Home.vue'
+import Login from '@/views/frontend/Login.vue'
+import NotFound404 from '@/views/frontend/NotFound404.vue'
+
+// Backend
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'Home',
+    component: FrontendLayout,
+    children: [
+      {
+        path: '',
+        component: Home
+      }
+    ],
+    meta: {
+      title: 'หน้าหลัก',
+      description: 'หน้าหลักระบบคงคลังสินค้า'
+    }
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/login',
+    name: 'Login',
+    component: FrontendLayout,
+    children: [
+      {
+        path: '',
+        component: Login
+      }
+    ],
+    meta: {
+      title: 'เข้าสู่ระบบ',
+      description: 'รายละเอียดหน้าเข้าสู่ระบบ'
+    }
+  },
+  // Error 404 
+  {
+    path: "/:catchAll(.*)",
+    component: NotFound404,
+    meta: {
+      title: '404 ไม่พบหน้านี้',
+      description: 'รายละเอียดหน้า 404'
+    }
   }
+
 ]
 
 const router = createRouter({
