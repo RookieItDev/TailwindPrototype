@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 // Import Layouts
 import FrontendLayout from '@/layouts/Frontend.vue'
+import BackendLayout from '@/layouts/Backend.vue'
+
 
 // Import Views
 // Frontend
@@ -10,8 +12,11 @@ import Login from '@/views/frontend/Login.vue'
 import NotFound404 from '@/views/frontend/NotFound404.vue'
 
 // Backend
+import HomeBackend from '@/views/backend/Home.vue'
+import CreateFuelPrice from '@/views/backend/CreateFuelPrice.vue'
 
 const routes = [
+  // FrontEnd
   {
     path: '/',
     name: 'Home',
@@ -50,7 +55,38 @@ const routes = [
       title: '404 ไม่พบหน้านี้',
       description: 'รายละเอียดหน้า 404'
     }
-  }
+  },
+  // Backend
+  {
+    path: '/backend/home',
+    name: 'HomeBackend',
+    component: BackendLayout,
+    children: [
+      {
+        path: '',
+        component: HomeBackend
+      }
+    ],
+    meta: {
+      title: 'หน้าหลัก',
+      description: 'หน้าหลัก'
+    }
+  },
+  {
+    path: '/backend/create',
+    name: 'CreateFuelPrice',
+    component: BackendLayout,
+    children: [
+      {
+        path: '',
+        component: CreateFuelPrice
+      }
+    ],
+    meta: {
+      title: 'หน้าหลัก',
+      description: 'หน้าหลัก'
+    }
+  },
 
 ]
 
